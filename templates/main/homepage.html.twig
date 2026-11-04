@@ -1,32 +1,34 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<h1>
-    Starshop: your monopoly-busting option for Starship parts!
-</h1>
+    <h1>
+        Starshop: your monopoly-busting option for Starship parts!
+    </h1>
 
-    {% block title %}Starshop: Beam up some parts! | {{ parent() }}{% endblock %}
+    {% block title %}Starshop: Beam up some parts {{ numberOfStarships }} ! | {{ parent() }}{% endblock %}
 
-<div>
-    {# test comment #}
-    <h2>My Ship</h2>
-    <table>
-        <tr>
-            <th>Name</th>
-            <td>{{ myShip.name | lower }}</td>
-        </tr>
-        <tr>
-            <th>Class</th>
-            <td>{{ myShip.class }}</td>
-        </tr>
-        <tr>
-            <th>Captain</th>
-            <td>{{ myShip.captain }}</td>
-        </tr>
-        <tr>
-            <th>Status</th>
-            <td>{{ myShip.status }}</td>
-        </tr>
-    </table>
-</div>
+    {% if ships|length > 2 %}
+        <div>
+            {# test comment #}
+            <h2>My Ship</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>{{ myShip.name | lower }}</td>
+                </tr>
+                <tr>
+                    <th>Class</th>
+                    <td>{{ myShip.class }}</td>
+                </tr>
+                <tr>
+                    <th>Captain</th>
+                    <td>{{ myShip.captain }}</td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td>{{ myShip.status }}</td>
+                </tr>
+            </table>
+        </div>
+    {% endif %}
 {% endblock %}
