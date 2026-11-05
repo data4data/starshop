@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class MainController extends AbstractController
 {
-    #[Route('/')]
+    #[Route('/',  name: 'homepage')]
     public function homepage(StarshipRepository $starshipRepository): Response
     {
         $ships = $starshipRepository->findAll();
