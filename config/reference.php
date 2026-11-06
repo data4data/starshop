@@ -960,6 +960,11 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     },
  *     default_transport?: scalar|Param|null, // Default: "default"
  * }
+ * @psalm-type MakerConfig = array{
+ *     root_namespace?: scalar|Param|null, // Default: "App"
+ *     generate_final_classes?: bool|Param, // Default: true
+ *     generate_final_entities?: bool|Param, // Default: false
+ * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -984,6 +989,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         symfonycasts_tailwind?: SymfonycastsTailwindConfig,
  *         stimulus?: StimulusConfig,
  *         turbo?: TurboConfig,
+ *         maker?: MakerConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
